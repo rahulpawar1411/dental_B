@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Mehta",
+    "treatment": "Dental Implants",
+    "rating": 5,
+    "date": "June 15, 2026",
+    "review": "Dr. Kriti Ghagre is absolute magic. I was terrified of dental implants, but her gentle approach and state-of-the-art clinic made me feel completely comfortable. The procedure was virtually painless, and the tooth looks and feels completely natural! A truly premium experience.",
+    "avatar": "AM"
+  },
+  {
+    "id": 2,
+    "name": "Priyanka Sharma",
+    "treatment": "Smile Designing",
+    "rating": 5,
+    "date": "May 28, 2026",
+    "review": "I had a massive gap in my front teeth and uneven shape. The smile design process was a breeze. Dr. Kriti explained every single step, showed me a 3D mock-up, and executed it flawlessly. I cannot stop smiling. The Golden Tooth clinic is luxurious and clean!",
+    "avatar": "PS"
+  },
+  {
+    "id": 3,
+    "name": "Rohan Deshmukh",
+    "treatment": "Invisible Aligners",
+    "rating": 5,
+    "date": "April 10, 2026",
+    "review": "Absolutely stellar treatment! The invisible aligners were custom-made, easy to wear, and very discreet. The clinic's hygiene standards are top-notch—everything is completely sterilized. Dr. Kriti's staff is exceptionally polite and helpful.",
+    "avatar": "RD"
+  },
+  {
+    "id": 4,
+    "name": "Anjali Gupta",
+    "treatment": "Root Canal Treatment",
+    "rating": 5,
+    "date": "March 18, 2026",
+    "review": "I was in unbearable pain from a deep cavity. The clinic scheduled me in their emergency slot instantly. The root canal was finished in one sitting and was absolutely pain-free! Dr. Kriti is very experienced and gentle. Highly recommend!",
+    "avatar": "AG"
+  },
+  {
+    "id": 5,
+    "name": "Vikram Malhotra",
+    "treatment": "Teeth Whitening",
+    "rating": 5,
+    "date": "February 05, 2026",
+    "review": "My teeth were severely stained due to smoking and coffee. The in-office whitening took just about an hour and brightened my teeth by several shades! There is no sensitivity, and the results are stunning. Truly professional dental care.",
+    "avatar": "VM"
+  },
+  {
+    "id": 1783051328704,
+    "name": "Rahul ji",
+    "treatment": "qq",
+    "rating": 5,
+    "date": "July 3, 2026",
+    "review": "qqqqqqqqqqqqqqqqqqq",
+    "avatar": "RJ"
+  }
+]
