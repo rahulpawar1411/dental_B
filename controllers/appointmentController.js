@@ -80,7 +80,7 @@ export const appointmentController = {
       // Send confirmation emails in background (non-blocking for fast UI response)
       const clinicEmail = process.env.CLINIC_EMAIL || process.env.EMAIL_USER || 'info@thegoldentooth.com';
       const siteUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
-      const logoPath = path.join(process.cwd(), '../frontend/src/assets/logo.png');
+      const logoPath = path.join(process.cwd(), 'assets/logo.png');
       const mailAttachments = [{
         filename: 'logo.png',
         path: logoPath,
