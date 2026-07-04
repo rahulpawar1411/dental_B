@@ -121,20 +121,24 @@ export const contactController = {
         </div>
       `;
 
-      // Dispatch emails in background
-      Promise.all([
-        sendMail({
-          to: newMessage.email,
-          subject: `We've Received Your Query - The Golden Tooth`,
-          html: patientHtml,
-          attachments: mailAttachments
-        }),
-        sendMail({
-          to: clinicEmail,
-          subject: `[New Inquiry] ${newMessage.name} - ${newMessage.subject}`,
-          html: adminHtml
-        })
-      ]).catch(err => console.error('[Contact Email Dispatch Error] Failed to send:', err));
+      // Await email dispatch (critical for Serverless environments like Vercel to prevent process termination)
+      try {
+        await Promise.all([
+          sendMail({
+            to: newMessage.email,
+            subject: `We've Received Your Query - The Golden Tooth`,
+            html: patientHtml,
+            attachments: mailAttachments
+          }),
+          sendMail({
+            to: clinicEmail,
+            subject: `[New Inquiry] ${newMessage.name} - ${newMessage.subject}`,
+            html: adminHtml
+          })
+        ]);
+      } catch (err) {
+        console.error('[Contact Email Dispatch Error] Failed to send:', err);
+      }
 
       res.status(201).json({
         success: true,

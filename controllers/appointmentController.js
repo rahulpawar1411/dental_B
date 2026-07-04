@@ -171,21 +171,25 @@ export const appointmentController = {
         </div>
       `;
 
-      // Dispatch both emails in background
-      Promise.all([
-        sendMail({
-          to: newAppointment.email,
-          subject: `Appointment Confirmed: ${newAppointment.treatment} - The Golden Tooth`,
-          html: patientHtml,
-          attachments: mailAttachments
-        }),
-        sendMail({
-          to: clinicEmail,
-          subject: `[New Appointment Alert] ${newAppointment.name} - ${newAppointment.treatment}`,
-          html: adminHtml
-        })
-      ]).catch(err => console.error('[Email Dispatch Error] Failed to send in background:', err));
-
+      // Await email dispatch (critical for Serverless environments like Vercel to prevent process termination)
+      try {
+        await Promise.all([
+          sendMail({
+            to: newAppointment.email,
+            subject: `Appointment Confirmed: ${newAppointment.treatment} - The Golden Tooth`,
+            html: patientHtml,
+            attachments: mailAttachments
+          }),
+          sendMail({
+            to: clinicEmail,
+            subject: `[New Appointment Alert] ${newAppointment.name} - ${newAppointment.treatment}`,
+            html: adminHtml
+          })
+        ]);
+      } catch (err) {
+        console.error('[Email Dispatch Error] Failed to send emails:', err);
+      }
+ 
       res.status(201).json({
         success: true,
         appointment: newAppointment
