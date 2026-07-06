@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import appointmentRoutes from './routes/appointmentRoutes.js';
 import testimonialRoutes from './routes/testimonialRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 
 // Load environment variables
@@ -40,6 +41,7 @@ app.get('/', (req, res) => {
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/admin', adminRoutes);
 
 
 // Error handler middleware
