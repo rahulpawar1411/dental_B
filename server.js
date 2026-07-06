@@ -5,6 +5,7 @@ import appointmentRoutes from './routes/appointmentRoutes.js';
 import testimonialRoutes from './routes/testimonialRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 
+
 // Load environment variables
 dotenv.config();
 
@@ -15,6 +16,8 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+  'http://localhost:5174',
+  'http://127.0.0.1:5174',
   'http://localhost:3000',
   process.env.FRONTEND_URL
 ].filter(Boolean);
@@ -37,6 +40,7 @@ app.get('/', (req, res) => {
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/contact', contactRoutes);
+
 
 // Error handler middleware
 app.use((err, req, res, next) => {
